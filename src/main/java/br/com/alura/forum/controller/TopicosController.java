@@ -59,4 +59,10 @@ public class TopicosController {
 
         return ResponseEntity.ok(new TopicoDto(topico));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> remover(@PathVariable Long id) {
+        topicoRepository.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
 }
